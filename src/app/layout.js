@@ -1,6 +1,8 @@
 import { Inter } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
+import { headers } from "next/headers";
+
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -11,6 +13,15 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const heads = headers();
+
+  const getNavLinkClass = (path) => {
+    if (heads?.headers?.referer.includes(path)) {
+      return `block py-2 pl-3 pr-4 text-white bg-purple-700 rounded lg:bg-transparent lg:text-purple-700 lg:p-0 dark:text-white`;
+    } else {
+      return `block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700`;
+    }
+  };
   return (
     <html lang="en">
       <body className={inter.className}>
@@ -54,45 +65,27 @@ export default function RootLayout({ children }) {
               <div className="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
                 <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
                   <li>
-                    <Link
-                      href="/"
-                      className="block py-2 pl-3 pr-4 text-white bg-purple-700 rounded lg:bg-transparent lg:text-purple-700 lg:p-0 dark:text-white"
-                      aria-current="page"
-                    >
+                    <Link href="/" className={getNavLinkClass("Home")} aria-current="page">
                       Home
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      href="/about"
-                      className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
-                    >
+                    <Link href="/about" className={getNavLinkClass("about")}>
                       About
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      href="/contact"
-                      className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
-                    >
+                    <Link href="/contact" className={getNavLinkClass("contact")}>
                       Contact
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      href="/services"
-                      className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
-                    >
+                    <Link href="/services" className={getNavLinkClass("services")}>
                       Services
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      href="#"
-                      className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
-                    >
-                      Client Portal
-                    </Link>
+                    <Link href="#">Client Portal</Link>
                   </li>
                 </ul>
               </div>
