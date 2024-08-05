@@ -1,8 +1,9 @@
 import Image from "next/image";
+import { FreeEstimate } from "./components/freeEstimate";
 
 export default function Home() {
   return (
-    <main classNameName="flex min-h-screen flex-col items-center justify-between p-24">
+    <main>
       {/* Start block */}
       <section className="bg-white dark:bg-gray-900">
         <div className="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28">
@@ -17,26 +18,26 @@ export default function Home() {
             <div className="space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
               <a
                 href="https://github.com/themesberg/landwind"
-                className="inline-flex items-center justify-center w-full px-5 py-3 text-sm font-medium text-center text-gray-900 border border-gray-200 rounded-lg sm:w-auto hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+                className="inline-flex items-center justify-center w-full bg-ftBlue hover:bg-blue-600  text-white px-5 py-3 text-sm font-medium text-center text-gray-900 border border-gray-200 rounded-lg sm:w-auto"
               >
                 IT Services
               </a>
               <a
                 href="https://www.figma.com/community/file/1125744163617429490"
-                className="inline-flex items-center justify-center w-full px-5 py-3 mb-2 mr-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:w-auto focus:outline-none hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+                className="inline-flex items-center justify-center w-full bg-ftGreen text-white px-5 py-3 mb-2 mr-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:w-auto focus:outline-none hover:bg-green-600 focus:z-10"
               >
                 Web and App Development
               </a>
             </div>
           </div>
           <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
-            <Image src="/planning.jpg" alt="hero image" width={1200} height={400} />
+            <Image src="/building-networks.jpg" alt="hero image" className="rounded" width={1200} height={400} />
           </div>
         </div>
       </section>
       {/* End block */}
       {/* Start block */}
-      <section className="bg-white dark:bg-gray-900">
+      <section className="hidden md:block lg:block bg-white dark:bg-gray-900">
         <div className="max-w-screen-xl px-4 pb-8 mx-auto lg:pb-16">
           <div className="grid grid-cols-2 gap-8 text-gray-500 sm:gap-12 sm:grid-cols-3 lg:grid-cols-6 dark:text-gray-400">
             <a href="https://cvmsd.com/" className="flex items-center lg:justify-center">
@@ -309,24 +310,7 @@ export default function Home() {
         </div>
       </section>
       {/* End block */}
-      {/* Start block */}
-      <section className="bg-gray-40 dark:bg-gray-800">
-        <div className="max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:px-6">
-          <div className="max-w-screen-sm mx-auto text-center">
-            <h2 className="mb-4 text-3xl font-extrabold leading-tight tracking-tight text-gray-900 dark:text-white">Get a free estimate today</h2>
-            <p className="mb-6 font-light text-gray-500 dark:text-gray-400 md:text-lg">
-              Contact us and we will provide you with a detailed estimate at no cost.
-            </p>
-            <a
-              href="#"
-              className="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800"
-            >
-              Free Estimate
-            </a>
-          </div>
-        </div>
-      </section>
-      {/* End block */}
+      <FreeEstimate />
     </main>
   );
 }
