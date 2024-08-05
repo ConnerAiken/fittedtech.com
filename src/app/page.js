@@ -99,8 +99,8 @@ export default function Home() {
             <div className="text-gray-500 sm:text-lg dark:text-gray-400">
               <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">On-site IT Support for home & business</h2>
               <p className="mb-8 font-light lg:text-xl">
-                We understand how critical it is for your technology to run smoothly, whether you're at home or managing a small business. Our expert
-                technicians are here to provide comprehensive IT solutions directly at your location.
+                We understand how critical it is for your technology to run smoothly, whether you&apos;re at home or managing a small business. Our
+                expert technicians are here to provide comprehensive IT solutions directly at your location.
               </p>
               {/* List */}
               <ul role="list" className="pt-8 space-y-5 border-t border-gray-200 my-7 dark:border-gray-700">
@@ -229,7 +229,7 @@ export default function Home() {
             <div className="text-gray-500 sm:text-lg dark:text-gray-400">
               <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">Websites and Apps</h2>
               <p className="mb-8 font-light lg:text-xl">
-                We have a team of veteran software engineers who can create custom websites and applications for your business. Whether it's a
+                We have a team of veteran software engineers who can create custom websites and applications for your business. Whether it&apos;s a
                 business operation that could be automated or a business brochure website, we can handle it and bring it to life quickly.
               </p>
               {/* List */}
@@ -327,7 +327,6 @@ export default function Home() {
         </div>
       </section>
       {/* End block */}
-      <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
     </main>
   );
 }

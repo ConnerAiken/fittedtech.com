@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
               </a>
               <div className="flex items-center lg:order-2">
                 <Link
-                  href="/free-estimate"
+                  href="#"
                   className="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800"
                 >
                   Free Estimate
@@ -70,17 +70,17 @@ export default function RootLayout({ children }) {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/about" className={getNavLinkClass("about")}>
+                    <Link href="#" className={getNavLinkClass("about")}>
                       About
                     </Link>
                   </li>
                   <li>
-                    <Link href="/contact" className={getNavLinkClass("contact")}>
+                    <Link href="#" className={getNavLinkClass("contact")}>
                       Contact
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services" className={getNavLinkClass("services")}>
+                    <Link href="#" className={getNavLinkClass("services")}>
                       Services
                     </Link>
                   </li>
@@ -126,22 +126,17 @@ export default function RootLayout({ children }) {
                 <ul className="text-gray-500 dark:text-gray-400">
                   <li className="mb-4">
                     <a href="#" className="hover:underline">
-                      Discord Server
+                      Item 1
                     </a>
                   </li>
                   <li className="mb-4">
                     <a href="#" className="hover:underline">
-                      Twitter
+                      Item 2
                     </a>
                   </li>
                   <li className="mb-4">
                     <a href="#" className="hover:underline">
-                      Facebook
-                    </a>
-                  </li>
-                  <li className="mb-4">
-                    <a href="#" className="hover:underline">
-                      Contact Us
+                      Item 3
                     </a>
                   </li>
                 </ul>
