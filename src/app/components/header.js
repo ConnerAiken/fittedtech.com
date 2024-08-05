@@ -65,7 +65,7 @@ export const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link href="#" className={getNavLinkClass("/contact")}>
+                <Link href="/contact" className={getNavLinkClass("/contact")}>
                   Contact
                 </Link>
               </li>
