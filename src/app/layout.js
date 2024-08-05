@@ -95,7 +95,7 @@ export default function RootLayout({ children }) {
         {children}
         <footer className="bg-white dark:bg-gray-800">
           <div className="max-w-screen-xl p-4 py-6 mx-auto lg:py-16 md:p-8 lg:p-10">
-            <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-3">
+            <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-4">
               <div>
                 <h3 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Company</h3>
                 <ul className="text-gray-500 dark:text-gray-400">
@@ -122,21 +122,56 @@ export default function RootLayout({ children }) {
                 </ul>
               </div>
               <div>
-                <h3 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Help center</h3>
+                <h3 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">IT Services</h3>
                 <ul className="text-gray-500 dark:text-gray-400">
                   <li className="mb-4">
                     <a href="#" className="hover:underline">
-                      Item 1
+                      Smart Home Integration
                     </a>
                   </li>
                   <li className="mb-4">
                     <a href="#" className="hover:underline">
-                      Item 2
+                      Network Setup and Security
                     </a>
                   </li>
                   <li className="mb-4">
                     <a href="#" className="hover:underline">
-                      Item 3
+                      Computer Repair
+                    </a>
+                  </li>
+                  <li className="mb-4">
+                    <a href="#" className="hover:underline">
+                      Data Backup and Recovery
+                    </a>
+                  </li>
+                  <li className="mb-4">
+                    <a href="#" className="hover:underline">
+                      Virus and Malware Removal
+                    </a>
+                  </li>
+                  <li className="mb-4">
+                    <a href="#" className="hover:underline">
+                      Security Audits
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Software Development</h3>
+                <ul className="text-gray-500 dark:text-gray-400">
+                  <li className="mb-4">
+                    <a href="#" className="hover:underline">
+                      Website Development
+                    </a>
+                  </li>
+                  <li className="mb-4">
+                    <a href="#" className="hover:underline">
+                      Application Development
+                    </a>
+                  </li>
+                  <li className="mb-4">
+                    <a href="#" className="hover:underline">
+                      Hardware Solutions
                     </a>
                   </li>
                 </ul>
