@@ -24,7 +24,7 @@ export default function Home() {
               </a>
               <a
                 href="https://www.figma.com/community/file/1125744163617429490"
-                className="inline-flex items-center justify-center w-full bg-ftGreen text-white px-5 py-3 mb-2 mr-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:w-auto focus:outline-none hover:bg-green-600 focus:z-10"
+                className="inline-flex items-center justify-center w-full bg-ftGreen text-white px-5 py-3 mb-2 mr-2 text-sm font-medium text-gray-900 border border-gray-200 rounded-lg sm:w-auto focus:outline-none hover:bg-green-600 focus:z-10"
               >
                 Web and App Development
               </a>
