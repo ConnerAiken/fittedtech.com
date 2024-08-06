@@ -89,15 +89,33 @@ export const Footer = () => {
             <h3 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Contact</h3>
             <ul className="text-gray-500 dark:text-gray-400">
               <li className="mb-4">
-                Telephone:{" "}
-                <a href="tel:2069004735" className="hover:underline">
-                  +1 (206)-900-4735
+                <a href="tel:2066514296" className="hover:underline">
+                  +1 (206)-651-4296
                 </a>
               </li>
               <li className="mb-4">
-                Email:{" "}
                 <a href="mailto: contact@fittedtech.com" className="hover:underline">
                   contact@fittedtech.com
+                </a>
+              </li>
+              <li className="mb-4">
+                <a href="https://www.facebook.com/profile.php?id=61563964858799" class="text-blue-600">
+                  facebook.com/fittedtech
+                </a>
+              </li>
+              <li className="mb-4">
+                <a href="https://www.instagram.com/fittedtech/" class="text-blue-600">
+                  instagram.com/fittedtech
+                </a>
+              </li>
+              <li className="mb-4">
+                <a href="https://discord.gg/x9H5pEph5n" class="text-blue-600">
+                  https://discord.gg/x9H5pEph5n
+                </a>
+              </li>
+              <li className="mb-4">
+                <a href="https://linkedin.com/company/fittedtech" class="text-blue-600">
+                  linkedin.com/company/fittedtech
                 </a>
               </li>
             </ul>

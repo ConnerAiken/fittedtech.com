@@ -20,12 +20,11 @@ export default function Contact() {
             <div class="mb-8">
               <h1 class="text-2xl font-bold mb-4">Phone or Email</h1>
               <p>
-                Give us a call at <strong>(206) 900-4735</strong>. Our support team is available Monday through Sunday, 9 AM to 5 PM PST.
+                Give us a call at <strong>+1 (206) 651-4296</strong>. Our support team is available Monday through Sunday, 9 AM to 5 PM PST.
               </p>
               <br />
               <p>
-                For general inquiries, please email us at <strong>contact@fittedtech.com</strong>. For support-related questions, reach out to{" "}
-                <strong>support@fittedtech.com</strong>.
+                Please email us at <strong>contact@fittedtech.com</strong>. We will respond to your inquiry within 24 hours.
               </p>
             </div>
 
@@ -40,13 +39,13 @@ export default function Contact() {
               <ul class="list-disc pl-6">
                 <li>
                   <strong>Facebook:</strong>{" "}
-                  <a href="https://facebook.com/fittedtech" class="text-blue-600">
+                  <a href="https://www.facebook.com/profile.php?id=61563964858799" class="text-blue-600">
                     facebook.com/fittedtech
                   </a>
                 </li>
                 <li>
                   <strong>Instagram:</strong>{" "}
-                  <a href="https://instagram.com/fittedtech" class="text-blue-600">
+                  <a href="https://www.instagram.com/fittedtech/" class="text-blue-600">
                     instagram.com/fittedtech
                   </a>
                 </li>
