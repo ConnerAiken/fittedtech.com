@@ -74,7 +74,7 @@ export default function Contact() {
             <form action="https://formbold.com/s/FORM_ID" method="POST">
               {/* Honeypot field */}
               <div className="hidden">
-                <label htmlFor="honeypot">Don't fill this out if you're human:</label>
+                <label htmlFor="honeypot">Don&apos;t fill this out if you&apos;re human:</label>
                 <input type="text" id="honeypot" name="honeypot" />
               </div>
 
