@@ -98,7 +98,7 @@ export default function Home() {
           {/* Row */}
           <div className="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
             <div className="text-gray-500 sm:text-lg dark:text-gray-400">
-              <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">On-site IT Support for home & business</h2>
+              <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">On-site IT services for home & business</h2>
               <p className="mb-8 font-light lg:text-xl">
                 We understand how critical it is for your technology to run smoothly, whether you&apos;re at home or managing a small business. Our
                 expert technicians are here to provide comprehensive IT solutions directly at your location.
