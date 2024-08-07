@@ -1,6 +1,15 @@
+"use client";
 import Image from "next/image";
+import React, { useCallback } from "react";
+import { useDropzone } from "react-dropzone";
+import "./page.css";
 
 export default function Contact() {
+  const onDrop = useCallback((acceptedFiles) => {
+    // Do something with the files
+  }, []);
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
+
   return (
     <>
       <section className="bg-gray-50 dark:bg-gray-800">
@@ -28,8 +37,8 @@ export default function Contact() {
       </section>
       <section className="bg-gray-200 dark:bg-gray-800">
         <div className="max-w-screen-xl flex items-center justify-center px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6">
-          <div class="mx-auto w-full max-w-[550px]">
-            <h1 class="text-2xl font-bold mb-4 text-center">Get Your Free Estimate Now</h1>
+          <div className="mx-auto w-full max-w-[550px]">
+            <h1 className="text-2xl font-bold mb-4 text-center">Get Your Free Estimate Now</h1>
             <form action="https://formbold.com/s/FORM_ID" method="POST">
               {/* Honeypot field */}
               <div className="hidden">
@@ -37,8 +46,8 @@ export default function Contact() {
                 <input type="text" id="honeypot" name="honeypot" />
               </div>
 
-              <div class="mb-5">
-                <label htmlFor="name" class="mb-3 block text-base font-medium text-[#07074D]">
+              <div className="mb-5">
+                <label htmlFor="name" className="mb-3 block text-base font-medium text-[#07074D]">
                   Full Name
                 </label>
                 <input
@@ -46,11 +55,11 @@ export default function Contact() {
                   name="name"
                   id="name"
                   placeholder="Full Name"
-                  class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                  className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                 />
               </div>
-              <div class="mb-5">
-                <label htmlFor="email" class="mb-3 block text-base font-medium text-[#07074D]">
+              <div className="mb-5">
+                <label htmlFor="email" className="mb-3 block text-base font-medium text-[#07074D]">
                   Email Address
                 </label>
                 <input
@@ -58,11 +67,11 @@ export default function Contact() {
                   name="email"
                   id="email"
                   placeholder="example@domain.com"
-                  class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                  className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                 />
               </div>
-              <div class="mb-5">
-                <label htmlFor="subject" class="mb-3 block text-base font-medium text-[#07074D]">
+              <div className="mb-5">
+                <label htmlFor="subject" className="mb-3 block text-base font-medium text-[#07074D]">
                   Subject
                 </label>
                 <input
@@ -70,11 +79,25 @@ export default function Contact() {
                   name="subject"
                   id="subject"
                   placeholder="Enter your subject"
-                  class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                  className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                 />
               </div>
-              <div class="mb-5">
-                <label htmlFor="message" class="mb-3 block text-base font-medium text-[#07074D]">
+              <div className="mb-5">
+                <label htmlFor="docs" className="mb-3 block text-base font-medium text-[#07074D]">
+                  Add Documents
+                </label>
+                <div
+                  id="docs-container"
+                  className="w-full border border-indigo-600 border-dashed  flex items-center justify-center bg-gray-50"
+                  style={{ height: "15vh" }}
+                  {...getRootProps()}
+                >
+                  <input {...getInputProps()} name="docs" id="docs" />
+                  {isDragActive ? <p>Drop the files here ...</p> : <p>Drag and drop some files here, or click to select files</p>}
+                </div>
+              </div>
+              <div className="mb-5">
+                <label htmlFor="message" className="mb-3 block text-base font-medium text-[#07074D]">
                   Message
                 </label>
                 <textarea
@@ -82,7 +105,7 @@ export default function Contact() {
                   name="message"
                   id="message"
                   placeholder="Type your message"
-                  class="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                  className="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                 ></textarea>
               </div>
               <div>

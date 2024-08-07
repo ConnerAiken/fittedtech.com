@@ -28,8 +28,8 @@ export default function Contact() {
       </section>
       <section className="bg-gray-200 dark:bg-gray-800">
         <div className="max-w-screen-xl flex items-center justify-center px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6">
-          <div class="mx-auto w-full max-w-[550px]">
-            <h1 class="text-2xl font-bold mb-4 text-center">Contact Us Now</h1>
+          <div className="mx-auto w-full max-w-[550px]">
+            <h1 className="text-2xl font-bold mb-4 text-center">Contact Us Now</h1>
             <form action="https://formbold.com/s/FORM_ID" method="POST">
               {/* Honeypot field */}
               <div className="hidden">
@@ -37,8 +37,8 @@ export default function Contact() {
                 <input type="text" id="honeypot" name="honeypot" />
               </div>
 
-              <div class="mb-5">
-                <label htmlFor="name" class="mb-3 block text-base font-medium text-[#07074D]">
+              <div className="mb-5">
+                <label htmlFor="name" className="mb-3 block text-base font-medium text-[#07074D]">
                   Full Name
                 </label>
                 <input
@@ -46,11 +46,11 @@ export default function Contact() {
                   name="name"
                   id="name"
                   placeholder="Full Name"
-                  class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                  className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                 />
               </div>
-              <div class="mb-5">
-                <label htmlFor="email" class="mb-3 block text-base font-medium text-[#07074D]">
+              <div className="mb-5">
+                <label htmlFor="email" className="mb-3 block text-base font-medium text-[#07074D]">
                   Email Address
                 </label>
                 <input
@@ -58,11 +58,11 @@ export default function Contact() {
                   name="email"
                   id="email"
                   placeholder="example@domain.com"
-                  class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                  className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                 />
               </div>
-              <div class="mb-5">
-                <label htmlFor="subject" class="mb-3 block text-base font-medium text-[#07074D]">
+              <div className="mb-5">
+                <label htmlFor="subject" className="mb-3 block text-base font-medium text-[#07074D]">
                   Subject
                 </label>
                 <input
@@ -70,11 +70,11 @@ export default function Contact() {
                   name="subject"
                   id="subject"
                   placeholder="Enter your subject"
-                  class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                  className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                 />
               </div>
-              <div class="mb-5">
-                <label htmlFor="message" class="mb-3 block text-base font-medium text-[#07074D]">
+              <div className="mb-5">
+                <label htmlFor="message" className="mb-3 block text-base font-medium text-[#07074D]">
                   Message
                 </label>
                 <textarea
@@ -82,7 +82,7 @@ export default function Contact() {
                   name="message"
                   id="message"
                   placeholder="Type your message"
-                  class="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                  className="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                 ></textarea>
               </div>
               <div>
@@ -100,8 +100,8 @@ export default function Contact() {
       <section className="bg-gray-50 dark:bg-gray-800">
         <div className="max-w-screen-xl px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6">
           <div className="items-start  gap-8 lg:grid lg:grid-cols-3 xl:gap-16">
-            <div class="mb-8">
-              <h1 class="text-2xl font-bold mb-4">Phone or Email</h1>
+            <div className="mb-8">
+              <h1 className="text-2xl font-bold mb-4">Phone or Email</h1>
               <p>
                 Give us a call at <strong>+1 (206) 651-4296</strong>. Our support team is available Monday through Sunday, 9 AM to 5 PM PST.
               </p>
@@ -111,36 +111,36 @@ export default function Contact() {
               </p>
             </div>
 
-            <div class="mb-8">
-              <h1 class="text-2xl font-bold mb-4">Business Hours</h1>
+            <div className="mb-8">
+              <h1 className="text-2xl font-bold mb-4">Business Hours</h1>
               <p>Our office is open Monday through Friday, from 9 AM to 5 PM PST. We are closed on weekends and public holidays.</p>
             </div>
 
-            <div class="mb-8">
-              <h1 class="text-2xl font-bold mb-4">Follow Us</h1>
+            <div className="mb-8">
+              <h1 className="text-2xl font-bold mb-4">Follow Us</h1>
               <p>Stay updated with the latest news and updates from Fitted Tech by following us on social media:</p>
-              <ul class="list-disc pl-6">
+              <ul className="list-disc pl-6">
                 <li>
                   <strong>Facebook:</strong>{" "}
-                  <a href="https://www.facebook.com/profile.php?id=61563964858799" class="text-blue-600">
+                  <a href="https://www.facebook.com/profile.php?id=61563964858799" className="text-blue-600">
                     facebook.com/fittedtech
                   </a>
                 </li>
                 <li>
                   <strong>Instagram:</strong>{" "}
-                  <a href="https://www.instagram.com/fittedtech/" class="text-blue-600">
+                  <a href="https://www.instagram.com/fittedtech/" className="text-blue-600">
                     instagram.com/fittedtech
                   </a>
                 </li>
                 <li>
                   <strong>Discord:</strong>{" "}
-                  <a href="https://discord.gg/x9H5pEph5n" class="text-blue-600">
+                  <a href="https://discord.gg/x9H5pEph5n" className="text-blue-600">
                     https://discord.gg/x9H5pEph5n
                   </a>
                 </li>
                 <li>
                   <strong>LinkedIn:</strong>{" "}
-                  <a href="https://linkedin.com/company/fittedtech" class="text-blue-600">
+                  <a href="https://linkedin.com/company/fittedtech" className="text-blue-600">
                     linkedin.com/company/fittedtech
                   </a>
                 </li>
