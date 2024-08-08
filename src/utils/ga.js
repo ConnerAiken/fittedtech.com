@@ -6,14 +6,14 @@ import Script from "next/script";
 const GoogleAnalytics = () => {
   return (
     <>
-      <Script strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=G-LKZCQY3SQE`} />
+      <Script strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=G-E60MZTLJJT`} />
 
       <Script id="" strategy="lazyOnload">
         {`
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-LKZCQY3SQE', {
+              gtag('config', 'G-E60MZTLJJT', {
               page_path: window.location.pathname,
               });
           `}
