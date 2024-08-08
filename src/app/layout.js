@@ -4,7 +4,7 @@ import StoreProvider from "./storeProvider";
 import "./globals.css";
 import { Header } from "./components/header";
 import { Footer } from "./components/footer";
-
+import GoogleAnalytics from "./../utils/ga";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -17,6 +17,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <StoreProvider>
+          <GoogleAnalytics />
           <Header />
           {children}
           <Footer />
