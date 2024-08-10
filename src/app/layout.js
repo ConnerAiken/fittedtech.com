@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
           <Footer />
         </StoreProvider>
       </body>
-      <GoogleAnalytics gaId="G-E60MZTLJJT" />
+      <GoogleAnalytics gaId="G-LKZCQY3SQE" />
     </html>
   );
 }
