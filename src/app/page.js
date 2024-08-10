@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { FreeEstimate } from "./components/freeEstimate";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -16,18 +17,18 @@ export default function Home() {
               application development but we also do common IT services.
             </p>
             <div className="space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
-              <a
-                href="https://github.com/themesberg/landwind"
+              <Link
+                href="/services"
                 className="inline-flex items-center justify-center w-full bg-ftBlue hover:bg-blue-600  text-white px-5 py-3 text-sm font-medium text-center text-gray-900 border border-gray-200 rounded-lg sm:w-auto"
               >
                 IT Services
-              </a>
-              <a
-                href="https://www.figma.com/community/file/1125744163617429490"
+              </Link>
+              <Link
+                href="/services"
                 className="inline-flex items-center justify-center w-full bg-ftGreen text-white px-5 py-3 mb-2 mr-2 text-sm font-medium text-gray-900 border border-gray-200 rounded-lg sm:w-auto focus:outline-none hover:bg-green-600 focus:z-10"
               >
                 Web and App Development
-              </a>
+              </Link>
             </div>
           </div>
           <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
