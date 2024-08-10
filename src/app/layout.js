@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
-import Image from "next/image";
 import StoreProvider from "./storeProvider";
 import "./globals.css";
+import "./layout.scss";
 import { Header } from "./components/header";
 import { Footer } from "./components/footer";
 import { GoogleAnalytics } from "@next/third-parties/google";

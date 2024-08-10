@@ -1,8 +1,81 @@
+"use client";
+import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Contact() {
+  const [isSending, setIsSending] = useState(false);
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [errors, setErrors] = useState({});
+
+  const isValidEmail = (email) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
+
+  const isValidPhoneNumber = (phone) => {
+    return /^(\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/.test(phone);
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.name || formData.name.length < 3) newErrors.name = "Full Name is required";
+    if (!formData.email) newErrors.email = "Email is required";
+    if (!formData.phone) newErrors.phone = "Phone number is required";
+    if (!formData.message) newErrors.message = "Message is required";
+    if (!formData.subject) newErrors.subject = "Subject is required";
+    if (formData.honeypot) newErrors.subject = "You are a bot!";
+
+    if (!isValidEmail(formData.email)) newErrors.email = "Email is not valid";
+    if (!isValidPhoneNumber(formData.phone)) newErrors.phone = "Phone number is not valid";
+
+    return newErrors;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const validationErrors = validateForm();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
+    setIsSending(true);
+    setErrors({});
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      // Handle successful form submission (e.g., show a success message)
+    } catch (error) {
+      // Handle error during form submission (e.g., show an error message)
+    } finally {
+      setIsSending(false);
+    }
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
   return (
     <main>
+      {isSending && (
+        <div className="w-full h-full fixed top-0 left-0 bg-white opacity-75 z-50">
+          <div className="flex justify-center items-center mt-[50vh]">
+            <FontAwesomeIcon icon={faCircleNotch} className="fa-spin text-violet-600" size={"5x"} />
+          </div>
+        </div>
+      )}
       <section className="bg-gray-50 dark:bg-gray-800">
         <div className="max-w-screen-xl px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6">
           {/* Row */}
@@ -30,11 +103,11 @@ export default function Contact() {
         <div className="max-w-screen-xl flex items-center justify-center px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6">
           <div className="mx-auto w-full max-w-[550px]">
             <h1 className="text-2xl font-bold mb-4 text-center">Contact Us Now</h1>
-            <form action="https://formbold.com/s/FORM_ID" method="POST">
+            <form id="contactForm" method="POST" onSubmit={handleSubmit}>
               {/* Honeypot field */}
               <div className="hidden">
                 <label htmlFor="honeypot">Don&apos;t fill this out if you&apos;re human:</label>
-                <input type="text" id="honeypot" name="honeypot" />
+                <input type="text" id="honeypot" name="honeypot" onChange={handleChange} />
               </div>
 
               <div className="mb-5">
@@ -43,109 +116,84 @@ export default function Contact() {
                 </label>
                 <input
                   type="text"
-                  name="name"
                   id="name"
-                  placeholder="Full Name"
-                  className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="w-full rounded-md border border-gray-300 p-2"
                 />
+                {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
               </div>
+
               <div className="mb-5">
                 <label htmlFor="email" className="mb-3 block text-base font-medium text-[#07074D]">
-                  Email Address
+                  Email
                 </label>
                 <input
                   type="email"
-                  name="email"
                   id="email"
-                  placeholder="example@domain.com"
-                  className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full rounded-md border border-gray-300 p-2"
                 />
+                {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
               </div>
+
+              <div className="mb-5">
+                <label htmlFor="phone" className="mb-3 block text-base font-medium text-[#07074D]">
+                  Phone Number
+                </label>
+                <input
+                  type="phone"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="w-full rounded-md border border-gray-300 p-2"
+                />
+                {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
+              </div>
+
               <div className="mb-5">
                 <label htmlFor="subject" className="mb-3 block text-base font-medium text-[#07074D]">
                   Subject
                 </label>
                 <input
                   type="text"
-                  name="subject"
                   id="subject"
-                  placeholder="Enter your subject"
-                  className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  className="w-full rounded-md border border-gray-300 p-2"
                 />
+                {errors.subject && <p className="text-red-500 text-sm">{errors.subject}</p>}
               </div>
+
               <div className="mb-5">
                 <label htmlFor="message" className="mb-3 block text-base font-medium text-[#07074D]">
                   Message
                 </label>
                 <textarea
-                  rows="4"
-                  name="message"
                   id="message"
-                  placeholder="Type your message"
-                  className="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                ></textarea>
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="w-full rounded-md border border-gray-300 p-2"
+                  rows={10}
+                />
+                {errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
               </div>
+
               <div>
                 <button
-                  disabled
-                  className="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800"
+                  type="submit"
+                  className="w-full rounded-md bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 text-white p-2"
                 >
-                  Submit
+                  Send Message
                 </button>
               </div>
             </form>
-          </div>
-        </div>
-      </section>
-      <section className="bg-gray-50 dark:bg-gray-800">
-        <div className="max-w-screen-xl px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6">
-          <div className="items-start  gap-8 lg:grid lg:grid-cols-3 xl:gap-16">
-            <div className="mb-8">
-              <h1 className="text-2xl font-bold mb-4">Phone or Email</h1>
-              <p>
-                Give us a call at <strong>+1 (206) 651-4296</strong>. Our support team is available Monday through Sunday, 9 AM to 5 PM PST.
-              </p>
-              <br />
-              <p>
-                Please email us at <strong>contact@fittedtech.com</strong>. We will respond to your inquiry within 24 hours.
-              </p>
-            </div>
-
-            <div className="mb-8">
-              <h1 className="text-2xl font-bold mb-4">Business Hours</h1>
-              <p>Our office is open Monday through Friday, from 9 AM to 5 PM PST. We are closed on weekends and public holidays.</p>
-            </div>
-
-            <div className="mb-8">
-              <h1 className="text-2xl font-bold mb-4">Follow Us</h1>
-              <p>Stay updated with the latest news and updates from Fitted Tech by following us on social media:</p>
-              <ul className="list-disc pl-6">
-                <li>
-                  <strong>Facebook:</strong>{" "}
-                  <a href="https://www.facebook.com/profile.php?id=61563964858799" className="text-blue-600">
-                    facebook.com/fittedtech
-                  </a>
-                </li>
-                <li>
-                  <strong>Instagram:</strong>{" "}
-                  <a href="https://www.instagram.com/fittedtech/" className="text-blue-600">
-                    instagram.com/fittedtech
-                  </a>
-                </li>
-                <li>
-                  <strong>Discord:</strong>{" "}
-                  <a href="https://discord.gg/x9H5pEph5n" className="text-blue-600">
-                    https://discord.gg/x9H5pEph5n
-                  </a>
-                </li>
-                <li>
-                  <strong>LinkedIn:</strong>{" "}
-                  <a href="https://linkedin.com/company/fittedtech" className="text-blue-600">
-                    linkedin.com/company/fittedtech
-                  </a>
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
       </section>

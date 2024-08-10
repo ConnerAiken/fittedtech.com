@@ -101,46 +101,10 @@ export default function Home() {
               <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">On-site IT services for home & business</h2>
               <p className="mb-8 font-light lg:text-xl">
                 We understand how critical it is for your technology to run smoothly, whether you&apos;re at home or managing a small business. Our
-                expert technicians are here to provide comprehensive IT solutions directly at your location.
+                technicians are here to provide comprehensive IT solutions directly at your location.
               </p>
               {/* List */}
               <ul role="list" className="pt-8 space-y-5 border-t border-gray-200 my-7 dark:border-gray-700">
-                <li className="flex space-x-3">
-                  {/* Icon */}
-                  <svg
-                    className="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                  <span className="text-base font-medium leading-tight text-gray-900 dark:text-white">
-                    Smart Home Integration: Connect and optimize your smart home devices for a seamless experience.
-                  </span>
-                </li>
-                <li className="flex space-x-3">
-                  {/* Icon */}
-                  <svg
-                    className="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                  <span className="text-base font-medium leading-tight text-gray-900 dark:text-white">
-                    Network Setup and Troubleshooting: Ensure your Wi-Fi and wired networks are fast, secure, and reliable.
-                  </span>
-                </li>
                 <li className="flex space-x-3">
                   {/* Icon */}
                   <svg
@@ -210,11 +174,29 @@ export default function Home() {
                     ></path>
                   </svg>
                   <span className="text-base font-medium leading-tight text-gray-900 dark:text-white">
-                    Security Audits: Identify vulnerabilities and secure your systems with our comprehensive security audits.
+                    Network Setup and Troubleshooting: Ensure your Wi-Fi and wired networks are fast, secure, and reliable.
+                  </span>
+                </li>
+                <li className="flex space-x-3">
+                  {/* Icon */}
+                  <svg
+                    className="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clipRule="evenodd"
+                    ></path>
+                  </svg>
+                  <span className="text-base font-medium leading-tight text-gray-900 dark:text-white">
+                    Smart Home Integration: Connect and optimize your smart home devices for a seamless experience.
                   </span>
                 </li>
               </ul>
-              <p className="mb-8 font-light lg:text-xl">We will make sure all the pieces fit.</p>
+              <p className="mb-8 font-light lg:text-xl">We will make sure everything runs smoothly.</p>
             </div>
             <Image
               className="hidden w-full mb-4 rounded-lg lg:mb-0 lg:flex"
@@ -228,13 +210,45 @@ export default function Home() {
           <div className="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
             <Image className="hidden w-full mb-4 rounded-lg lg:mb-0 lg:flex" src="/planning.jpg" width={400} height={75} alt="feature image 2" />
             <div className="text-gray-500 sm:text-lg dark:text-gray-400">
-              <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">Websites and Apps</h2>
+              <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">Websites, Apps and Automation</h2>
               <p className="mb-8 font-light lg:text-xl">
                 We have a team of veteran software engineers who can create custom websites and applications for your business. Whether it&apos;s a
                 business operation that could be automated or a business brochure website, we can handle it and bring it to life quickly.
               </p>
               {/* List */}
               <ul role="list" className="pt-8 space-y-5 border-t border-gray-200 my-7 dark:border-gray-700">
+                <li className="flex space-x-3">
+                  {/* Icon */}
+                  <svg
+                    className="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clipRule="evenodd"
+                    ></path>
+                  </svg>
+                  <span className="text-base font-medium leading-tight text-gray-900 dark:text-white">Websites and apps</span>
+                </li>
+                <li className="flex space-x-3">
+                  {/* Icon */}
+                  <svg
+                    className="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clipRule="evenodd"
+                    ></path>
+                  </svg>
+                  <span className="text-base font-medium leading-tight text-gray-900 dark:text-white">Automation services</span>
+                </li>
                 <li className="flex space-x-3">
                   {/* Icon */}
                   <svg
@@ -267,39 +281,7 @@ export default function Home() {
                       clipRule="evenodd"
                     ></path>
                   </svg>
-                  <span className="text-base font-medium leading-tight text-gray-900 dark:text-white">Business brochure websites</span>
-                </li>
-                <li className="flex space-x-3">
-                  {/* Icon */}
-                  <svg
-                    className="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                  <span className="text-base font-medium leading-tight text-gray-900 dark:text-white">Custom hardware solutions</span>
-                </li>
-                <li className="flex space-x-3">
-                  {/* Icon */}
-                  <svg
-                    className="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                  <span className="text-base font-medium leading-tight text-gray-900 dark:text-white">Security audits</span>
+                  <span className="text-base font-medium leading-tight text-gray-900 dark:text-white">Hardware solutions</span>
                 </li>
               </ul>
               <p className="font-light lg:text-xl">

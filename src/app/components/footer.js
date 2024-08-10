@@ -1,6 +1,15 @@
 import Image from "next/image";
+import config from "../../config";
 
 export const Footer = () => {
+  const formatPhoneNumber = (phoneNumberString) => {
+    const cleaned = ("" + phoneNumberString).replace(/\D/g, "");
+    const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+    if (match) {
+      return "(" + match[1] + ") " + match[2] + "-" + match[3];
+    }
+  };
+
   return (
     <footer className="bg-white dark:bg-gray-800">
       <div className="max-w-screen-xl p-4 py-6 mx-auto lg:py-16 md:p-8 lg:p-10">
@@ -89,13 +98,13 @@ export const Footer = () => {
             <h3 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Contact</h3>
             <ul className="text-gray-500 dark:text-gray-400">
               <li className="mb-4">
-                <a href="tel:2066514296" className="hover:underline">
-                  +1 (206)-651-4296
+                <a href={`tel:${config.contact.phone}`} className="hover:underline">
+                  {formatPhoneNumber(config.contact.phone)}
                 </a>
               </li>
               <li className="mb-4">
-                <a href="mailto: contact@fittedtech.com" className="hover:underline">
-                  contact@fittedtech.com
+                <a href={`mailto: ${config.contact.email}}`} className="hover:underline">
+                  {config.contact.email}
                 </a>
               </li>
             </ul>
@@ -103,7 +112,7 @@ export const Footer = () => {
         </div>
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <div className="text-center">
-          <a href="#" className="flex items-center justify-center text-2xl font-semibold text-gray-900 dark:text-white  p-4">
+          <a href="/" className="flex items-center justify-center text-2xl font-semibold text-gray-900 dark:text-white  p-4">
             <Image src={"logos/logo-dark-cropped.svg"} alt="logo" width={400} height={250} />
           </a>
           <span className="block text-sm text-center text-gray-500 dark:text-gray-400">
@@ -111,10 +120,7 @@ export const Footer = () => {
           </span>
           <ul className="flex justify-center mt-5 space-x-5">
             <li>
-              <a
-                href="https://www.facebook.com/profile.php?id=61563964858799"
-                className="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400"
-              >
+              <a href={config.social.facebook} className="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path
                     fillRule="evenodd"
@@ -125,7 +131,7 @@ export const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="https://www.instagram.com/fittedtech/" className="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
+              <a href={config.social.instagram} className="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path
                     fillRule="evenodd"
@@ -136,7 +142,7 @@ export const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="https://github.com/FittedTech" className="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
+              <a href={config.social.github} className="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path
                     fillRule="evenodd"
@@ -147,17 +153,14 @@ export const Footer = () => {
               </a>
             </li>
             <li>
-              <a
-                href="https://www.linkedin.com/company/fittedtech/"
-                className="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400"
-              >
+              <a href={config.social.linkedin} className="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24">
                   <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                 </svg>
               </a>
             </li>
             <li>
-              <a href="https://discord.gg/84ec2U54U9" className="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
+              <a href={config.social.discord} className="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 bi bi-discord" fill="currentColor" viewBox="0 0 16 16">
                   <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612" />
                 </svg>

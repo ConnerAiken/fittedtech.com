@@ -1,8 +1,10 @@
 "use client";
 import Image from "next/image";
-import React, { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
-import "./page.css";
+import "./page.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
 
 export default function Contact() {
   const onDrop = useCallback((acceptedFiles) => {
@@ -10,8 +12,76 @@ export default function Contact() {
   }, []);
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 
+  const [isSending, setIsSending] = useState(false);
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [errors, setErrors] = useState({});
+
+  const isValidEmail = (email) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
+
+  const isValidPhoneNumber = (phone) => {
+    return /^(\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/.test(phone);
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.name || formData.name.length < 3) newErrors.name = "Full Name is required";
+    if (!formData.email) newErrors.email = "Email is required";
+    if (!formData.phone) newErrors.phone = "Phone number is required";
+    if (!formData.message) newErrors.message = "Message is required";
+    if (formData.honeypot) newErrors.subject = "You are a bot!";
+
+    if (!isValidEmail(formData.email)) newErrors.email = "Email is not valid";
+    if (!isValidPhoneNumber(formData.phone)) newErrors.phone = "Phone number is not valid";
+
+    return newErrors;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const validationErrors = validateForm();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
+    setIsSending(true);
+    setErrors({});
+
+    try {
+      const response = await fetch("/api/estimate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      // Handle successful form submission (e.g., show a success message)
+    } catch (error) {
+      // Handle error during form submission (e.g., show an error message)
+    } finally {
+      setIsSending(false);
+    }
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
   return (
     <>
+      {isSending && (
+        <div className="w-full h-full fixed top-0 left-0 bg-white opacity-75 z-50">
+          <div className="flex justify-center items-center mt-[50vh]">
+            <FontAwesomeIcon icon={faCircleNotch} className="fa-spin text-violet-600" size={"5x"} />
+          </div>
+        </div>
+      )}
       <section className="bg-gray-50 dark:bg-gray-800">
         <div className="max-w-screen-xl px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6">
           {/* Row */}
@@ -39,11 +109,11 @@ export default function Contact() {
         <div className="max-w-screen-xl flex items-center justify-center px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6">
           <div className="mx-auto w-full max-w-[550px]">
             <h1 className="text-2xl font-bold mb-4 text-center">Get Your Free Estimate Now</h1>
-            <form action="https://formbold.com/s/FORM_ID" method="POST">
+            <form id="contactForm" method="POST" onSubmit={handleSubmit}>
               {/* Honeypot field */}
               <div className="hidden">
                 <label htmlFor="honeypot">Don&apos;t fill this out if you&apos;re human:</label>
-                <input type="text" id="honeypot" name="honeypot" />
+                <input type="text" id="honeypot" name="honeypot" onChange={handleChange} />
               </div>
 
               <div className="mb-5">
@@ -52,36 +122,60 @@ export default function Contact() {
                 </label>
                 <input
                   type="text"
-                  name="name"
                   id="name"
-                  placeholder="Full Name"
-                  className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="w-full rounded-md border border-gray-300 p-2"
                 />
+                {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
               </div>
+
               <div className="mb-5">
                 <label htmlFor="email" className="mb-3 block text-base font-medium text-[#07074D]">
-                  Email Address
+                  Email
                 </label>
                 <input
                   type="email"
-                  name="email"
                   id="email"
-                  placeholder="example@domain.com"
-                  className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full rounded-md border border-gray-300 p-2"
                 />
+                {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
               </div>
+
               <div className="mb-5">
-                <label htmlFor="subject" className="mb-3 block text-base font-medium text-[#07074D]">
-                  Subject
+                <label htmlFor="phone" className="mb-3 block text-base font-medium text-[#07074D]">
+                  Phone Number
                 </label>
                 <input
-                  type="text"
-                  name="subject"
-                  id="subject"
-                  placeholder="Enter your subject"
-                  className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                  type="phone"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="w-full rounded-md border border-gray-300 p-2"
                 />
+                {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
               </div>
+
+              <div className="mb-5">
+                <label htmlFor="message" className="mb-3 block text-base font-medium text-[#07074D]">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="w-full rounded-md border border-gray-300 p-2"
+                  rows={10}
+                />
+                {errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
+              </div>
+
               <div className="mb-5">
                 <label htmlFor="docs" className="mb-3 block text-base font-medium text-[#07074D]">
                   Add Documents
@@ -96,24 +190,12 @@ export default function Contact() {
                   {isDragActive ? <p>Drop the files here ...</p> : <p>Drag and drop some files here, or click to select files</p>}
                 </div>
               </div>
-              <div className="mb-5">
-                <label htmlFor="message" className="mb-3 block text-base font-medium text-[#07074D]">
-                  Message
-                </label>
-                <textarea
-                  rows="4"
-                  name="message"
-                  id="message"
-                  placeholder="Type your message"
-                  className="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                ></textarea>
-              </div>
               <div>
                 <button
-                  disabled
-                  className="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800"
+                  type="submit"
+                  className="w-full rounded-md bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 text-white p-2"
                 >
-                  Submit
+                  Request Estimate
                 </button>
               </div>
             </form>
