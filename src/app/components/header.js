@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import "./header.scss";
 
 export const Header = () => {
   const pathname = usePathname();
