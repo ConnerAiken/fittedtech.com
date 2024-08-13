@@ -10,11 +10,10 @@ export default function Home() {
         <div className="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28">
           <div className="mr-auto place-self-center lg:col-span-7">
             <h1 className="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl dark:text-white">
-              Supporting homes and small businesses.
+              Supporting Homes and Small Businesses
             </h1>
             <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-              Fitted Tech provides home and small business IT services in the Snoqualmie Valley of Washington State. We specialize in web and
-              application development but we also do common IT services.
+              Fitted Tech provides home and small business IT services in the Snoqualmie Valley of Washington State. We're here to help.
             </p>
             <div className="space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
               <Link
@@ -286,7 +285,7 @@ export default function Home() {
                 </li>
               </ul>
               <p className="font-light lg:text-xl">
-                With a detailed estimate and robust project plan, we will get your new project launched on time and priced accurately.
+                With a detailed estimate and project plan, we will get your new project launched on time and priced accurately.
               </p>
             </div>
           </div>

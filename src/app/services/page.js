@@ -4,6 +4,8 @@ import "./page.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
+import HeaderPad from "./../components/headerPad";
+import ContentBlock from "./../components/contentBlock";
 
 // Inspiration: https://www.hillsboroaviation.com/contract-charter/tours-excursions/
 
@@ -63,140 +65,10 @@ export default function Services() {
 
   return (
     <>
-      <section className="flex flex-col md:flex-row">
-        <section className="hidden support-hero-section h-screen w-full text-white md:w-1/2 md:block">
-          <div
-            className="px-4 pt-5 pb-8 mx-auto  transition delay-100 duration-300 ease-in-out hover:backdrop-blur-md"
-            style={{ height: "94%", marginTop: "6%" }}
-          >
-            <div className="grid place-content-center px-4 pt-20 pb-8 mx-auto">
-              <div className="bg-slate-100/95 p-6  text-black backdrop-brightness-125 backdrop-contrast-125 shadow-lg rounded-lg h-full">
-                <h1 className="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-4xl xl:text-5xl">IT Services</h1>
-                <p className="text-slate-800 md:text-lg lg:text-xl">
-                  Do you have a tech problem that you cannot figure out? We can help!
-                  <br />
-                  <br />
-                  Our team of experts can remotely diagnoise and troubleshoot your issue. We can also provide on-site support if needed. We offer a
-                  wide range of IT services to meet your needs!
-                  <br />
-                </p>
-                <br />
-                <br />
-                <h4 className="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-2xl xl:text-3xl text-slate">
-                  What we offer..
-                </h4>
-                <div className="flex justify-center bg-slate-600 p-3">
-                  {exampleServices.map((project) => {
-                    return (
-                      <Link
-                        href={project.href}
-                        key={project.title}
-                        className={`
-                            max-w-sm rounded overflow-hidden shadow-lg bg-slate-800 m-2 text-white
-                            transition delay-100 duration-150 ease-in-out shadow-lg
-                            hover:shadow-2xl 
-                            hover:cursor-pointer
-                        `}
-                        target="_blank"
-                      >
-                        <Image src={project.image} className="w-full" alt={project.title} width={200} height={200} />
-                        <div className="px-6 py-4">
-                          <div className="font-bold text-xl mb-2">{project.title}</div>
-                          <p className="text-base">{project.description}</p>
-                        </div>
-                        <div className="px-6 pt-4 pb-2">
-                          {project.tags.map((tag) => {
-                            return (
-                              <span
-                                className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
-                                key={project.title + "-" + tag}
-                              >
-                                #{tag}
-                              </span>
-                            );
-                          })}
-                        </div>
-                      </Link>
-                    );
-                  })}
-                </div>
-                <br />
-                {/* <div className="flex justify-center">
-                  <button className="px-5 py-3 bg-slate-500 hover:bg-slate-600 transition delay-100 duration-150 ease-in-out text-white rounded-lg">
-                    Read More
-                  </button>
-                </div> */}
-              </div>
-            </div>
-          </div>
-        </section>
-        <section className="hidden engineering-hero-section h-screen w-full text-white md:w-1/2  md:block">
-          <div
-            className="px-4 pt-5 pb-8 mx-auto  transition delay-100 duration-300 ease-in-out hover:backdrop-blur-md"
-            style={{ height: "94%", marginTop: "6%" }}
-          >
-            <div className="grid place-content-center px-4 pt-20 pb-8 mx-auto ">
-              <div className="bg-slate-100/95 p-6 text-black backdrop-brightness-125 backdrop-contrast-125 shadow-lg rounded-lg h-full">
-                <h1 className="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-4xl xl:text-5xl">Software Engineering</h1>
-                <p className="text-slate-800 md:text-lg lg:text-xl">
-                  If you have an idea, we can help you bring it to life!
-                  <br />
-                  <br />
-                  Next to technology, our biggest passion is software engineering. We love to build things that make a difference. We specialize in
-                  web and mobile applications of any shape and size. If you have a business, we can help you automate client or business operations!
-                  <br />
-                </p>
-                <br />
-                <h4 className="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-2xl xl:text-3xl text-slate">
-                  Our last few projects...
-                </h4>
-                <div className="flex justify-center bg-slate-600 p-3">
-                  {exampleProjects.map((project) => {
-                    return (
-                      <Link
-                        href={project.href}
-                        key={project.title}
-                        className={`
-                            max-w-sm rounded overflow-hidden shadow-lg bg-slate-800 m-2 text-white
-                            transition delay-100 duration-150 ease-in-out shadow-lg
-                            hover:shadow-2xl 
-                            hover:cursor-pointer
-                        `}
-                        target="_blank"
-                      >
-                        <Image src={project.image} className="w-full" alt={project.title} width={200} height={200} />
-                        <div className="px-6 py-4">
-                          <div className="font-bold text-xl mb-2">{project.title}</div>
-                          <p className="text-base">{project.description}</p>
-                        </div>
-                        <div className="px-6 pt-4 pb-2">
-                          {project.tags.map((tag) => {
-                            return (
-                              <span
-                                className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
-                                key={project.title + "-" + tag}
-                              >
-                                #{tag}
-                              </span>
-                            );
-                          })}
-                        </div>
-                      </Link>
-                    );
-                  })}
-                </div>
-                <br />
-                {/* <div className="flex justify-center">
-                  <button className="px-5 py-3 bg-slate-500 hover:bg-slate-600 transition delay-100 duration-150 ease-in-out text-white rounded-lg">
-                    Read More
-                  </button>
-                </div> */}
-              </div>
-            </div>
-          </div>
-        </section>
-        <section className="visible md:hidden pt-20" />
-      </section>
+      <HeaderPad />
+      <ContentBlock>
+        <p>hello</p>
+      </ContentBlock>
       <FreeEstimate />
     </>
   );

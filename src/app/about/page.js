@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { FreeEstimate } from "../components/freeEstimate";
+import ContentBlock from "./../components/contentBlock";
+import Testimonials from "./../components/testimonials";
 
 export default function About() {
   return (
@@ -30,8 +32,7 @@ export default function About() {
             <div className="text-gray-500 sm:text-lg dark:text-gray-400">
               <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">Why Choose Us?</h2>
               <p className="mb-8 font-light lg:text-xl">
-                There are a lot of companies that provide IT services and website or application development. So why choose us? Here are a few
-                reasons.
+                There are a lot of companies that provide IT services and development services. So why choose us? Here are a few reasons.
               </p>
               {/* List */}
               <ul role="list" className="pt-8 space-y-5 border-t border-gray-200 my-7 dark:border-gray-700">
@@ -136,6 +137,22 @@ export default function About() {
           </div>
         </div>
       </section>
+      <ContentBlock className="bg-white">
+        <div class="container mx-auto px-4 grid grid-cols-2">
+          <div className="w-full text-gray-500 sm:text-lg dark:text-gray-400">
+            <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+              Our Clients <span className="text-purple-500">Love Us</span>
+            </h2>
+            <p className="mb-8 font-light lg:text-xl">
+              We bring a touch of magic to every project. With a dash of innovation, a pinch of creativity, and a whole lot of dedication, anything is
+              possible. But don't just take our word for it.
+            </p>
+          </div>
+          <div className="w-full">
+            <Testimonials />
+          </div>
+        </div>
+      </ContentBlock>
       {/* End block */}
       <FreeEstimate />
     </>
