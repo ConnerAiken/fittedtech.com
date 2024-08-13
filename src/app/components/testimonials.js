@@ -22,7 +22,7 @@ export default function Testimonials(props) {
           them again soon.{" "}
         </p>
       </div>
-      <div className="flex flex-col justify-start mt-4">
+      <div className="flex flex-row justify-start mt-4">
         <Image src="/gswtrade-owner.jpg" className="rounded-full" height={75} width={75} />
         <div className="flex flex-col justify-center pl-4">
           <h4 className="text-2xl font-extrabold tracking-tight text-gray-500">Billy Vicario</h4>
