@@ -13,7 +13,7 @@ export default function Home() {
               Supporting Homes and Small Businesses
             </h1>
             <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-              Fitted Tech provides home and small business IT services in the Snoqualmie Valley of Washington State. We're here to help.
+              Fitted Tech provides home and small business IT services in the Snoqualmie Valley of Washington State. We&apos;re here to help.
             </p>
             <div className="space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
               <Link

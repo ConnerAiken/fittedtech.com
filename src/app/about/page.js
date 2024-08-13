@@ -145,7 +145,7 @@ export default function About() {
             </h2>
             <p className="mb-8 font-light lg:text-xl">
               We bring a touch of magic to every project. With a dash of innovation, a pinch of creativity, and a whole lot of dedication, anything is
-              possible. But don't just take our word for it.
+              possible. But don&apos;t just take our word for it.
             </p>
           </div>
           <div className="w-full">
