@@ -70,11 +70,11 @@ export const Header = () => {
                   Contact
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/services" className={getNavLinkClass("/services")}>
                   Services
                 </Link>
-              </li>
+              </li> */}
               {/* <li>
                 <Link href="#">Client Portal</Link>
               </li> */}

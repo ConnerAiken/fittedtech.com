@@ -63,14 +63,14 @@ export default function Services() {
 
   return (
     <>
-      <section className="flex flex-col md:flex-row">
+      <section className="flex flex-col md:flex-row bg-white">
         <section className="hidden support-hero-section h-screen w-full text-white md:w-1/2 md:block">
           <div
-            className="px-4 pt-5 pb-8 mx-auto  transition delay-100 duration-300 ease-in-out hover:backdrop-blur-md"
+            className="px-4 pt-5 pb-8 mx-auto transition delay-100 duration-300 ease-in-out hover:backdrop-blur-md"
             style={{ height: "94%", marginTop: "6%" }}
           >
             <div className="grid place-content-center px-4 pt-20 pb-8 mx-auto">
-              <div className="bg-slate-100/95 p-6  text-black backdrop-brightness-125 backdrop-contrast-125 shadow-lg rounded-lg h-full">
+              <div className="bg-white p-6  text-black backdrop-brightness-125 backdrop-contrast-125 shadow-lg rounded-lg h-full">
                 <h1 className="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-4xl xl:text-5xl">IT Services</h1>
                 <p className="text-slate-800 md:text-lg lg:text-xl">
                   Do you have a tech problem that you cannot figure out? We can help!
@@ -121,11 +121,6 @@ export default function Services() {
                   })}
                 </div>
                 <br />
-                {/* <div className="flex justify-center">
-                  <button className="px-5 py-3 bg-slate-500 hover:bg-slate-600 transition delay-100 duration-150 ease-in-out text-white rounded-lg">
-                    Read More
-                  </button>
-                </div> */}
               </div>
             </div>
           </div>
