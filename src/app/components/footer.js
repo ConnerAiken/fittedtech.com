@@ -28,11 +28,6 @@ export const Footer = () => {
                 </a>
               </li>
               <li className="mb-4">
-                <a href="/services" className="hover:underline">
-                  Services
-                </a>
-              </li>
-              <li className="mb-4">
                 <a href="/contact" className="hover:underline">
                   Contact
                 </a>
