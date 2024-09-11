@@ -66,11 +66,6 @@ export const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className={getNavLinkClass("/blog")}>
-                  Blog
-                </Link>
-              </li>
-              <li>
                 <Link href="/contact" className={getNavLinkClass("/contact")}>
                   Contact
                 </Link>
