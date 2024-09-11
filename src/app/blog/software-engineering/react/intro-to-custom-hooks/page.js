@@ -11,7 +11,7 @@ export default function ReactIntroToCustomHooks() {
           <div className="w-full text-gray-500 sm:text-lg dark:text-gray-400">
             <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">An intro to custom hooks</h2>
             <p className="mb-8 font-light lg:text-xl">Did you know you can use custom hooks with React?</p>
-            <p>Here's an example</p>
+            <p>Here&apos;s an example</p>
             <SyntaxHighlighter language="javascript" style={dark}>
               {`import { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
