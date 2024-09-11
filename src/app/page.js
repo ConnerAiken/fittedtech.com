@@ -31,7 +31,7 @@ export default function Home() {
             </div>
           </div>
           <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
-            <Image src="/building-networks.jpg" alt="hero image" className="rounded" width={1200} height={400} />
+            <Image src="/seattle.jpg" alt="hero image" className="rounded" width={1200} height={400} />
           </div>
         </div>
       </section>
