@@ -196,7 +196,11 @@ export default function Home() {
                   </span>
                 </li>
               </ul>
-              <p className="mb-8 font-light lg:text-xl">We will make sure everything runs smoothly.</p>
+              <p className="mb-8 font-light lg:text-xl">
+                {" "}
+                We are the only trusted provider for Web Development and IT Support in Snoqualmie Valley, servicing North Bend, Snoqualmie, Fall City,
+                Carnation, Duvall, Issaquah, Sammamish and surrounding areas.
+              </p>
             </div>
             <Image
               className="hidden w-full mb-4 rounded-lg lg:mb-0 lg:flex"
