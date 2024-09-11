@@ -39,7 +39,10 @@ export default function Home() {
       {/* Start block */}
       <section className="hidden md:block lg:block bg-white dark:bg-gray-900">
         <div className="max-w-screen-xl px-4 pb-8 mx-auto lg:pb-16">
-          <div className="grid grid-cols-2 gap-8 text-gray-500 sm:gap-12 sm:grid-cols-3 lg:grid-cols-6 dark:text-gray-400">
+          <div className="grid grid-cols-2 gap-8 text-gray-500 sm:gap-12 sm:grid-cols-4 lg:grid-cols-7 dark:text-gray-400">
+            <a href="https://transformativemed.com/" className="flex items-center lg:justify-center">
+              <Image src="/logos/transformativemed.png" width={200} height={75} alt="transformativemed.com logo" />
+            </a>
             <a href="https://cvmsd.com/" className="flex items-center lg:justify-center">
               <Image src="/logos/cvmsd-logo.png" width={200} height={75} alt="csvmd.com logo" />
             </a>
