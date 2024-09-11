@@ -16,5 +16,6 @@ export default {
     instagram: "https://www.instagram.com/fittedtech/",
     github: "https://github.com/FittedTech",
     discord: "https://discord.gg/84ec2U54U9",
+    yelp: "https://www.yelp.com/biz/fitted-tech-north-bend",
   },
 };
