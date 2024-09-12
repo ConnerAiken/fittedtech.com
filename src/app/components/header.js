@@ -20,7 +20,8 @@ export const Header = () => {
       <nav className="bg-white border-gray-200 py-2.5 dark:bg-gray-900 z-10">
         <div className="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
           <a href="/" className="flex items-center">
-            <Image src={"/logos/logo-dark-cropped.svg"} alt="logo" width={200} height={75} />
+            <Image src={"/logos/logo-dark-cropped.svg"} className="dark:hidden" alt="logo" width={200} height={75} />
+            <Image src={"/logos/logo-light-cropped.svg"} className="dark:block hidden" alt="logo" width={200} height={75} />
           </a>
           <div className="flex items-center lg:order-2">
             <Link

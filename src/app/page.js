@@ -18,13 +18,13 @@ export default function Home() {
             <div className="space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
               <Link
                 href="/services"
-                className="inline-flex items-center justify-center w-full bg-ftBlue hover:bg-blue-600  text-white px-5 py-3 text-sm font-medium text-center text-gray-900 border border-gray-200 rounded-lg sm:w-auto"
+                className="inline-flex items-center justify-center w-full bg-ftBlue hover:bg-blue-600  text-white px-5 py-3 text-sm font-medium text-center text-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg sm:w-auto"
               >
                 IT Services
               </Link>
               <Link
                 href="/services"
-                className="inline-flex items-center justify-center w-full bg-ftGreen text-white px-5 py-3 mb-2 mr-2 text-sm font-medium text-gray-900 border border-gray-200 rounded-lg sm:w-auto focus:outline-none hover:bg-green-600 focus:z-10"
+                className="inline-flex items-center justify-center w-full bg-ftGreen text-white px-5 py-3 mb-2 mr-2 text-sm font-medium text-gray-900 border border-gray-200 rounded-lg sm:w-auto focus:outline-none hover:bg-green-600 focus:z-10 dark:border-gray-800 "
               >
                 Web and App Development
               </Link>
@@ -38,15 +38,15 @@ export default function Home() {
       {/* End block */}
       {/* Start block */}
       <section className="hidden md:block lg:block bg-white dark:bg-gray-900">
-        <div className="max-w-screen-xl px-4 pb-8 mx-auto lg:pb-16">
-          <div className="grid grid-cols-2 gap-8 text-gray-500 sm:gap-12 sm:grid-cols-4 lg:grid-cols-7 dark:text-gray-400">
+        <div className="max-w-screen-xl px-4 pb-4 mx-auto lg:pb-2">
+          <div className="grid grid-cols-2 gap-8 text-gray-500 sm:gap-12 sm:grid-cols-3 lg:grid-cols-6 dark:text-gray-400">
             <a href="https://transformativemed.com/" className="flex items-center lg:justify-center">
               <Image src="/logos/transformativemed.png" width={200} height={75} alt="transformativemed.com logo" />
             </a>
             <a href="https://cvmsd.com/" className="flex items-center lg:justify-center">
               <Image src="/logos/cvmsd-logo.png" width={200} height={75} alt="csvmd.com logo" />
             </a>
-            <a href="https://gswtrade.com/" className="flex items-center lg:justify-center">
+            <a href="https://gswtrade.com/" className="flex items-center lg:justify-center ">
               <Image src="/logos/gswtrade-logo.png" width={200} height={75} alt="csvmd.com logo" />
             </a>
             <a href="https://vulnixfire.com/" className="flex items-center lg:justify-center">
@@ -85,12 +85,12 @@ export default function Home() {
                 ></path>
               </svg>
             </a>
-            <a href="https://mvcchome.org/" className="flex items-center lg:justify-center">
+            <a href="https://mvcchome.org/" className="flex items-center lg:justify-center  dark:invert">
               <Image src="/logos/missionviejo-logo.png" width={200} height={75} alt="mvcchome.org logo" />
             </a>
-            <a href="https://www.facebook.com/myweedbunny" className="flex items-center lg:justify-center">
+            {/* <a href="https://www.facebook.com/myweedbunny" className="flex items-center lg:justify-center">
               <Image src="/logos/weedbunny-logo.png" width={200} height={75} alt="weedbunny.com logo" />
-            </a>
+            </a> */}
           </div>
         </div>
       </section>

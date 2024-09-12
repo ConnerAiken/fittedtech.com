@@ -137,13 +137,13 @@ export default function About() {
           </div>
         </div>
       </section>
-      <ContentBlock className="bg-white">
+      <ContentBlock className="bg-white dark:bg-gray-900">
         <div class="container mx-auto px-4 grid grid-cols-2">
-          <div className="w-full text-gray-500 sm:text-lg dark:text-gray-400">
-            <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+          <div className="w-full sm:text-lg">
+            <h2 className="mb-4 text-3xl font-extrabold tracking-tight light:text-grary dark:text-white">
               Our Clients <span className="text-purple-500">Love Us</span>
             </h2>
-            <p className="mb-8 font-light lg:text-xl">
+            <p className="mb-8 light:text-white dark:text-white lg:text-xl">
               We bring a touch of magic to every project. With a dash of innovation, a pinch of creativity, and a whole lot of dedication, anything is
               possible. But don&apos;t just take our word for it.
             </p>

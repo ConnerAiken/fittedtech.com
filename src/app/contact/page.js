@@ -98,7 +98,7 @@ export default function Contact() {
           </div>
         </div>
       </section>
-      <section className="bg-gray-200 dark:bg-gray-800">
+      <section className="bg-gray-200 dark:bg-gray-700">
         <div className="max-w-screen-xl flex items-center justify-center px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6">
           <div className="mx-auto w-full max-w-[550px]">
             <h1 className="text-2xl font-bold mb-4 text-center">Contact Us Now</h1>
@@ -110,7 +110,7 @@ export default function Contact() {
               </div>
 
               <div className="mb-5">
-                <label htmlFor="name" className="mb-3 block text-base font-medium text-[#07074D]">
+                <label htmlFor="name" className="mb-3 block text-base font-medium light:text-[#07074D] dark:text-white">
                   Full Name
                 </label>
                 <input
@@ -119,13 +119,13 @@ export default function Contact() {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full rounded-md border border-gray-300 p-2"
+                  className="w-full rounded-md border border-gray-300 p-2 light:text-[#07074D] dark:text-white"
                 />
                 {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
               </div>
 
               <div className="mb-5">
-                <label htmlFor="email" className="mb-3 block text-base font-medium text-[#07074D]">
+                <label htmlFor="email" className="mb-3 block text-base font-medium  light:text-[#07074D] dark:text-white">
                   Email
                 </label>
                 <input
@@ -140,7 +140,7 @@ export default function Contact() {
               </div>
 
               <div className="mb-5">
-                <label htmlFor="phone" className="mb-3 block text-base font-medium text-[#07074D]">
+                <label htmlFor="phone" className="mb-3 block text-base font-medium  light:text-[#07074D] dark:text-white">
                   Phone Number
                 </label>
                 <input
@@ -155,7 +155,7 @@ export default function Contact() {
               </div>
 
               <div className="mb-5">
-                <label htmlFor="subject" className="mb-3 block text-base font-medium text-[#07074D]">
+                <label htmlFor="subject" className="mb-3 block text-base font-medium  light:text-[#07074D] dark:text-white">
                   Subject
                 </label>
                 <input
@@ -170,7 +170,7 @@ export default function Contact() {
               </div>
 
               <div className="mb-5">
-                <label htmlFor="message" className="mb-3 block text-base font-medium text-[#07074D]">
+                <label htmlFor="message" className="mb-3 block text-base font-medium  light:text-[#07074D] dark:text-white">
                   Message
                 </label>
                 <textarea
