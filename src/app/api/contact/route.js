@@ -12,7 +12,6 @@ const transporter = nodemailer.createTransport({
 });
 
 export const POST = async (req) => {
-  console.log(req);
   try {
     // Parse the request body
     const { name, email, message, subject, phone } = await req.json();
@@ -24,7 +23,7 @@ export const POST = async (req) => {
 
     // Handle the form submission (e.g., save to a database or send an email)
     await transporter.sendMail({
-      from: '"Fitted Tech" <contact@fittedtech.com>', // sender address
+      from: '"Fitted Tech" <conner@fittedtech.com>', // sender address
       to: process.env.CONTACT_FORM_RECIPIENTS, // list of receivers
       subject: `You have a new Fitted Tech contact inquiry!`, // Subject line
       text: `Subject: ${subject}\n\n${message}\n\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}`, // plain text body
@@ -33,7 +32,8 @@ export const POST = async (req) => {
     // Send a success response
     return new NextResponse(JSON.stringify({ message: "Message sent successfully." }), { status: 200 });
   } catch (error) {
+    console.log(error);
     // Handle any errors
-    return new NextResponse(JSON.stringify({ message: "An error occurred while submitting the form.." }), { status: 500 });
+    return new NextResponse(JSON.stringify({ message: "An error occurred while submitting the form..", details: error }), { status: 500 });
   }
 };

@@ -119,7 +119,7 @@ export default function Contact() {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full rounded-md border border-gray-300 p-2 light:text-[#07074D] dark:text-white"
+                  className="w-full rounded-md border border-gray-300 p-2 light:text-[#07074D] dark:text-black"
                 />
                 {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
               </div>
@@ -134,7 +134,7 @@ export default function Contact() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full rounded-md border border-gray-300 p-2"
+                  className="w-full rounded-md border border-gray-300 p-2 text-black"
                 />
                 {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
               </div>
@@ -149,7 +149,7 @@ export default function Contact() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full rounded-md border border-gray-300 p-2"
+                  className="w-full rounded-md border border-gray-300 p-2 text-black"
                 />
                 {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
               </div>
@@ -164,7 +164,7 @@ export default function Contact() {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full rounded-md border border-gray-300 p-2"
+                  className="w-full rounded-md border border-gray-300 p-2 text-black"
                 />
                 {errors.subject && <p className="text-red-500 text-sm">{errors.subject}</p>}
               </div>
@@ -178,7 +178,7 @@ export default function Contact() {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full rounded-md border border-gray-300 p-2"
+                  className="w-full rounded-md border border-gray-300 p-2 text-black"
                   rows={10}
                 />
                 {errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}

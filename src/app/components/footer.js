@@ -108,7 +108,8 @@ export const Footer = () => {
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <div className="text-center">
           <a href="/" className="flex items-center justify-center text-2xl font-semibold text-gray-900 dark:text-white  p-4">
-            <Image src={"/logos/logo-dark-cropped.svg"} alt="logo" width={400} height={250} />
+            <Image src={"/logos/logo-dark-cropped.svg"} className="dark:hidden" alt="logo" width={200} height={75} />
+            <Image src={"/logos/logo-light-cropped.svg"} className="dark:block hidden" alt="logo" width={200} height={75} />
           </a>
           <span className="block text-sm text-center text-gray-500 dark:text-gray-400">
             © 2011-{new Date().getFullYear()} FittedTech™. All Rights Reserved.
