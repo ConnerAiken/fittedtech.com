@@ -49,14 +49,20 @@ export default function Contact() {
         body: JSON.stringify(formData),
       });
 
+      alert(JSON.stringify(response, null, 2));
+
       if (!response.ok) {
         throw new Error("Network response was not ok");
+      } else {
+        alert("Message sent successfully");
       }
 
       // Handle successful form submission (e.g., show a success message)
     } catch (error) {
+      alert("An error occurred while submitting the form.");
       // Handle error during form submission (e.g., show an error message)
     } finally {
+      alert("Done!");
       setIsSending(false);
     }
   };
