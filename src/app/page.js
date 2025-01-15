@@ -17,13 +17,13 @@ export default function Home() {
             </p>
             <div className="space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
               <Link
-                href="/services"
+                href="/contact"
                 className="inline-flex items-center justify-center w-full bg-ftBlue hover:bg-blue-600  text-white px-5 py-3 text-sm font-medium text-center text-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg sm:w-auto"
               >
                 IT Services
               </Link>
               <Link
-                href="/services"
+                href="/contact"
                 className="inline-flex items-center justify-center w-full bg-ftGreen text-white px-5 py-3 mb-2 mr-2 text-sm font-medium text-gray-900 border border-gray-200 rounded-lg sm:w-auto focus:outline-none hover:bg-green-600 focus:z-10 dark:border-gray-800 "
               >
                 Web and App Development

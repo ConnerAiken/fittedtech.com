@@ -30,7 +30,7 @@ export const Header = () => {
             >
               Free Estimate
             </Link>
-            <button
+            {/* <button
               data-collapse-toggle="mobile-menu-2"
               type="button"
               className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -52,7 +52,7 @@ export const Header = () => {
                   clipRule="evenodd"
                 ></path>
               </svg>
-            </button>
+            </button> */}
           </div>
           <div className="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
             <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
